@@ -8,7 +8,7 @@ export const PrevList = ({ listPresents, setPrev, setPrint, print }) => {
   }
   return (
     <div
-      className={`bg-[#e4e6e9] opacitiy-80 ${
+      className={`bg-[#e4e6e9] z-20 opacitiy-80 ${
         print ? 'h-screen w-3/4' : 'h-auto'
       } rounded-lg p-6  top-10 shadow-lg shadow-gray-400 fixed`}
     >

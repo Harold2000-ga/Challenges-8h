@@ -23,7 +23,7 @@ export const Edit = ({ itemEdit, listPresents, setListPresents, setEdit }) => {
   }
 
   return (
-    <div className='bg-[#e4e6e9] bg-opacity-80 w-[300px] relative  shadow-xl shadow-gray-500 rounded-xl py-10 px-4'>
+    <div className='bg-[#e4e6e9] bg-opacity-80 w-[300px] relative z-20  shadow-xl shadow-gray-500 rounded-xl py-10 px-4'>
       <div className='flex items-center justify-between mb-5'>
         <h1 className='text-xl font-bold  mb-4'>Update Present</h1>
         <AiFillCloseCircle

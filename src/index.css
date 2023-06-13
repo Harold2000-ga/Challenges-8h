@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-copo-de-nieve {
+  background-image: url('https://cdn.icon-icons.com/icons2/1074/PNG/96/1_snowflake__christmas_xmas_winter_snow_decoration_celebration_icon-icons.com_77036.png');
+  background-repeat: no-repeat;
+  background-size: cover; /* Cambia 'cover' por 'contain' */
+  background-position: center center;
+}
+
+.animate-snowfall {
+  animation: snowfall 10s linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
