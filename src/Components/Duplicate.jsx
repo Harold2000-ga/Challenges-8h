@@ -125,6 +125,7 @@ export const Duplicate = ({ listPresents, setListPresents, setDuplicate, itemEdi
               className='bg-slate-300 w-full rounded-lg p-2'
               name='price'
               type='number'
+              step='any'
               placeholder='0'
               defaultValue={itemEdit.price}
             />

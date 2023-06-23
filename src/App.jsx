@@ -4,7 +4,7 @@ import { Add } from './Components/Add'
 import { Edit } from './Components/Edit'
 import { Duplicate } from './Components/Duplicate'
 import { PrevList } from './Components/PrevList'
-import bgImage from './assets/Navidad2.jpg'
+import bgImage from './assets/Navidad8.jpg'
 import audioMinion from '../src/assets/Minions-3.mp3'
 import { GiSoundOff, GiSoundOn } from 'react-icons/gi'
 import { SnowfallContainer } from './Components/SnowfallContainer'
@@ -39,39 +39,30 @@ function App() {
   const handleAudioToggle = () => {
     setAudio(!audio)
   }
+  const handleAdd = () => {
+    setAdd(true)
+    setEdit(false)
+    setDuplicate(false)
+  }
 
   return (
     <div
-      className=' w-full h-screen bg-no-repeat bg-contain bg-center bg-red-200 flex items-center justify-center flex-col-reverse md:flex-row gap-6 p-4'
+      className=' h-screen bg-no-repeat bg-cover bg-center flex items-center justify-center flex-col-reverse md:flex-row gap-6 p-4'
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <SnowfallContainer />
-
-      <audio id='audio' src={audioMinion} autoPlay muted={audio} loop />
-      {(prev || add || edit || duplicate) && (
-        <div
-          className={`fixed top-0 left-0 w-full h-full z-20 ${
-            print ? 'bg-white opacity-100' : 'bg-gray-700 opacity-60'
-          }`}
-        ></div>
-      )}
-
-      <div className='bg-[#e4e6e9] h-auto z-10 bg-opacity-80 max-w-[300px] md:max-w-[500px] w-full shadow-xl shadow-gray-500 rounded-xl py-10 px-6'>
+      <div
+        className={`bg-[#e4e6e9] h-auto z-10 bg-opacity-80 max-w-[350px] md:max-w-[500px] md:block ${
+          (add || edit || duplicate) && 'hidden'
+        } w-full shadow-xl  shadow-gray-500 rounded-xl py-10 px-6`}
+      >
         <div className='flex justify-between items-center'>
           <button
             className=' bg-red-500 hover:bg-red-600 hover:cursor-pointer py-2 px-4 my-2 rounded-xl'
-            onClick={() => setAdd(true)}
+            onClick={handleAdd}
           >
             Add Present
           </button>
-
-          <div className='hidden' onClick={handleAudioToggle}>
-            {audio ? (
-              <GiSoundOff size={30} color='#EF4444' />
-            ) : (
-              <GiSoundOn color='#EF4444' size={30} />
-            )}
-          </div>
         </div>
 
         <h1 className='text-2xl font-bold '>Presents</h1>

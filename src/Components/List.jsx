@@ -19,6 +19,7 @@ export const List = ({
     setItemEdit(item)
     setEdit(true)
     setAdd(false)
+    setDuplicate(false)
   }
   const handleDuplicate = item => {
     setItemEdit(item)
@@ -42,14 +43,14 @@ export const List = ({
                   alt='Image present'
                 />
               )}
-              <div className='flex flex-col items-start justify-center'>
+              <div className='flex flex-col items-start font-semibold justify-center'>
                 <p>{item.name} </p>
-                <p className=' text-sm font-light'>{item.addressee}</p>
+                <p className=' text-sm font-normal'>{item.addressee}</p>
               </div>
               <div className='flex items-center flex-col justify-center'>
                 <p>{item.amount > 1 && `(${item.amount})`}</p>
-                <p className='text-sm font-light text-green-700'>
-                  {item.price && `$${item.price * item.amount}`}
+                <p className='text-sm font-normal text-green-700'>
+                  {item.price && `$${(item.price * item.amount).toFixed(2)}`}
                 </p>
               </div>
             </div>

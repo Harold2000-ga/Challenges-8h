@@ -134,6 +134,7 @@ export const Add = ({ listPresents, setListPresents, setAdd }) => {
             <label className='text-light text-sm'>Price</label>
             <input
               className='bg-slate-300 w-full rounded-lg p-2'
+              step='any'
               name='price'
               type='number'
               placeholder='0'
